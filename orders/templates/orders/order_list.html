@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content%}
+{% include 'nav.html' %}
+<h1> Orders </h1>
+<div class="col-sm-offset-10">
+   <a href="/orders/create" class="btn btn-info" role="button"> Create Order </a>
+</div>
+<div class="col-sm-12">
+{% for order in order_list %}
+<div class="thumbnail">
+   <div class="caption ">
+      <p class='lead'> Order Id: {{order.id}}</p>
+      <p class='lead'> Confirmed: {{order.confirmed}}</p>
+      <p class='lead'> Email: {{order.email}}</p>
+      <p class='lead'> Variant Id: {{order.variant_id}}</p>
+      <p class='lead'> Total price: {{order.total_price}}</p>
+      {% if order.fulfillment_status %}
+      <p class='lead'> Fulfillment status: {{order.fulfillment_status}}</p>
+      {% else %}
+      <p class='lead'> Fulfillment status: N/A</p>
+      {% endif %}
+      <p class='lead'> Phone: {{order.phone}}</p>
+      <p class='lead'> Created at: {{order.created_at}}</p>
+      <a href="{% url 'orders_module:order_detail' order.id %}" class="btn btn-info" role="button">View detail</a>
+      <br/>
+   </div>
+</div>
+{% endfor %}
+<div class="pagination">
+   <span class="page-links">
+      {% if page_obj.has_previous %}
+      <a href="/orders?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+      <span class="page-current">
+         <p class='lead'>Page</p>
+         {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+      {% if page_obj.has_next %}
+      <a href="/orders?page={{ page_obj.next_page_number }}">next</a>
+      {% endif %}
+   </span>
+</div>
+{% endblock %}

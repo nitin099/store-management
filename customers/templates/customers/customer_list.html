@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content%}
+{% include "nav.html" %}
+<div class="col-sm-12">
+   <h1> Customers </h1>
+   <div class="col-sm-offset-10">
+      <a href="/customers/create" class="btn btn-info" role="button"> Create Customer </a>
+   </div>
+   {% for customer in customer_list %}
+   <div class="thumbnail">
+      <div class="caption ">
+         <p class='lead'> Customer Id: {{customer.customer_id}}</p>
+         <p class='lead'> Customer name: {{customer.first_name}} {{customer.last_name}}</p>
+         <p class='lead'> Email: {{customer.email}}</p>
+         <p class='lead'> Order count: {{customer.orders_count}}</p>
+         <p class='lead'> Total spent: {{customer.total_spent}} {{customer.currency}}</p>
+         <p class='lead'> Created at: {{customer.created_at}}</p>
+         <a href="{% url 'customers_module:customer_detail' customer.id %}" class="btn btn-info" role="button">View detail</a>
+         <br/>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+<div class="pagination">
+   <span class="page-links">
+      {% if page_obj.has_previous %}
+      <a href="/customers?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+      <span class="page-current">
+         <p class='lead'>Page</p>
+         {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+      {% if page_obj.has_next %}
+      <a href="/customers?page={{ page_obj.next_page_number }}">next</a>
+      {% endif %}
+   </span>
+</div>
+{% endblock%}

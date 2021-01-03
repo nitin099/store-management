@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content%}
+{% include 'nav2.html'%}
+<h1> Customer details</h1>
+<div class="thumbnail">
+   <div class="caption ">
+      <p class='lead'> Customer Id: {{customer.customer_id}}</p>
+      <p class='lead'> Customer name: {{customer.first_name}} {{customer.last_name}}</p>
+      <p class='lead'> Email: {{customer.email}}</p>
+      <p class='lead'> Order count: {{customer.orders_count}}</p>
+      {% if customer.total_spent %}
+      <p class='lead'> Total spent: {{customer.total_spent}} {{customer.currency}}</p>
+      {% else %}
+      <p class='lead'> Total spent: 0 {{customer.currency}}</p>
+      {% endif %}
+      <p class='lead'> Created at: {{customer.created_at}}</p>
+      <p class='lead'> Address: {{customer.address.address}}</p>
+      <p class='lead'> City: {{customer.address.city}}</p>
+      <p class='lead'> State: {{customer.address.state}}</p>
+      <p class='lead'> Country: {{customer.address.country}}</p>
+      <p class='lead'> Zip code: {{customer.address.zip_code}}</p>
+      <br/>
+      <a href="{% url 'customers_module:customer_update' customer.id %}" class="btn btn-info" role="button">Update</a>
+   </div>
+</div>
+{% endblock%}
