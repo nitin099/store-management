@@ -5,5 +5,5 @@ app_name = "manage_store_module"
 
 urlpatterns = [
     path('webhook/', views.create_webhook, name='create_webhook'),
-    path('webhook/customer/', views.customer_webhook, name='customer_webhook'),
+    path('webhook/orders/', views.order_webhook, name='orders_webhook'),
 ]

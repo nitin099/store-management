@@ -31,7 +31,7 @@ def create_webhook(request):
 
 
 @csrf_exempt
-def customer_webhook(request):
+def order_webhook(request):
     """
     Syncs the incoming order data from shopify to Order model.
     """
