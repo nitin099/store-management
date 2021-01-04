@@ -1,0 +1,6 @@
+customer_id, first_name, last_name, email, phone, currency, created_at, updated_at
+3213312, Joe, Biden, joe@biden@gmail.com, 9321312431, USD, 2020-12-16T12:45:19+00:00, 2020-12-16T12:46:19+00:00
+2213312, Kate, Midl, kate@mild@gmail.com, 3992839232, USD, 2020-12-17T12:45:19+00:00, 2020-12-17T12:46:19+00:00
+5216312, Justin, Mitchel, justin@mitchel@gmail.com, 9328398239, USD, 2020-12-16T12:45:19+00:00, 2020-12-16T12:46:19+00:00
+4234214, Michal, Jake, michal@jake@gmail.com, 4293829381, USD, 2020-12-16T12:45:19+00:00, 2020-12-16T12:46:19+00:00
+5235124, Jacob, Samuel, jacob@samuel@gmail.com, 9932992109, USD, 2020-12-25T01:45:19+00:00, 2020-12-25T01:45:19+00:00

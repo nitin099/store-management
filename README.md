@@ -16,6 +16,8 @@ An application for storing, processing and reviewing orders that belong to those
 
 * Add *Webhook* url specifying the topic like **order/create** or **update** etc, and sync the in real time in db.
 
+* Ability to import and save a list of customers from a CSV.
+
 
   
 
@@ -61,6 +63,14 @@ $ python sync_shopify_data.py 2020-12-01 2021-01-01
 ````
 
 
+## To import the customers from CSV.
+
+`python manage.py load_customers --path <path_to_csv_file>`
+
+
+````
+$ python manage.py load_customers --path /Users/csv/customers_example.csv
+````
 
 ## Final step
 
