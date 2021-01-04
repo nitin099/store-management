@@ -71,7 +71,7 @@ $ python manage.py runserver
 - Open web browser and goto `127.0.0.1:8000`.
 - Goto Customers to retrieve, search all the customers, update customer details.
 - Goto Orders to retrieve, search all the orders.
-- Enable saving customer data from Shopify providing url `<host>/manage_store/webhook/customer`.
+- Enable saving customer data from Shopify providing url `<host>/manage_store/webhook/orders/`.
 
 ## Contributing
 
